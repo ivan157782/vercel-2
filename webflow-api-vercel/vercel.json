@@ -5,5 +5,11 @@
       "src": "api/webflow.js",
       "use": "@vercel/node"
     }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/webflow.js"
+    }
   ]
 }

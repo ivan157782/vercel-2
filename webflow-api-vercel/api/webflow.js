@@ -1,7 +1,14 @@
 export default async function handler(req, res) {
     const apiToken = process.env.WEBFLOW_API_TOKEN;
-    const collectionId = "6755f813c56fd887724f21e7"; 
-    const itemId = "6755f813c56fd887724f22e5"; 
+
+    console.log("✅ API Token Loaded:", apiToken ? "Yes" : "No");  // Debugging log
+
+    if (!apiToken) {
+        return res.status(500).json({ error: "❌ Missing API Token in environment variables" });
+    }
+
+    const collectionId = "6755f813c56fd887724f21e7";
+    const itemId = "6755f813c56fd887724f2225";
     const fieldKey = "property-photos";
 
     try {
